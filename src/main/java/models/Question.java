@@ -3,12 +3,11 @@ package models;
 import lombok.Data;
 
 import java.util.List;
-import java.util.UUID;
 
 @Data
 public class Question {
 
-    private UUID id;
+    private Long id;
 
     private String question;
 

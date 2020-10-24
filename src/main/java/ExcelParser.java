@@ -24,9 +24,9 @@ public class ExcelParser {
             links = new ArrayList<>();
             steps = new ArrayList<>();
             for (Cell cell : cells) {
-                if (!cell.toString().isEmpty()) {
+                if (!cell.toString().isEmpty() && cells.getRowNum() != 0) {
                     switch (cell.getColumnIndex()) {
-                        case 0: break;
+                        case 0: question.setId((long) cell.getNumericCellValue()); break;
                         case 1: question.setQuery(cell.getStringCellValue()); break;
                         case 2: question.setClarification(cell.getStringCellValue()); break;
                         case 3: question.setType(cell.getStringCellValue()); break;
